@@ -3,10 +3,12 @@ const express = require('express')
 require('dotenv').config()
 const app = express()
 
+const Routes = require('./routes/router')
 
-app.get('/', (req, res) => {
-    res.json({msg : "hello my express app"})
-  })
+app.use(express.json())
+app.use('/api/routes',Routes);
+
+
 
   port = 8080
 
